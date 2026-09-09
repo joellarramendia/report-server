@@ -10,4 +10,9 @@
  */
 export type * from './models/employees.js'
 export type * from './models/countries.js'
+export type * from './models/categories.js'
+export type * from './models/customers.js'
+export type * from './models/order_details.js'
+export type * from './models/orders.js'
+export type * from './models/products.js'
 export type * from './commonInputTypes.js'
