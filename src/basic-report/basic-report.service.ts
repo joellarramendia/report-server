@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrinterService } from 'src/printer/printer.service';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { getEmploymentLetter, getEmploymentLetterByIdReport, getHelloWorldReport } from 'src/reports';
+import { getCountryReport, getEmploymentLetter, getEmploymentLetterByIdReport, getHelloWorldReport } from 'src/reports';
 
 
 
@@ -50,6 +50,24 @@ export class BasicReportService {
             employeeWorkSchedule: employee.work_schedule,
             employeeCompany: 'Tucan Code Corp'
         })
+
+        const doc = this.printerService.createPdf(docDefenition)
+
+        return doc
+    }
+
+
+
+    async getCountries() {
+        const countries = await this.prisma.countries.findMany({
+            where: {
+                local_name: {
+                    not: null
+                }
+            }
+        })
+
+        const docDefenition = getCountryReport({countries})
 
         const doc = this.printerService.createPdf(docDefenition)
 
