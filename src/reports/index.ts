@@ -1,3 +1,5 @@
+export { orderByIdReport } from "./order-by-id.report";
+
 export { getCountryReport } from "./countries.report";
 
 export { getEmploymentLetterByIdReport } from "./employment-letter-by-id.report";
