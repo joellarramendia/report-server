@@ -13,7 +13,8 @@ const currentDate: Column = {
   text: DateFormatter.getDDMMMMYYY(new Date()),
   alignment: 'right',
   margin: [20, 30],
-  width: 180
+  width: 120,
+  fontSize: 10
 }
 
 interface HeaderOptions {
@@ -34,7 +35,7 @@ export const headerSection = (options: HeaderOptions): Content => {
     alignment: 'center',
     margin: [0, 2, 0, 0],
     style: {
-      bold: true,
+      // bold: true,
       fontSize: 16
     }
   } : { text: '' }
