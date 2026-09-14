@@ -25,4 +25,15 @@ export class ExtraReportsController {
     pdfDoc.end()
   }
 
+
+
+  @Get('custom-size')
+  async getCustomSize(@Res() response: Response) {
+    const pdfDoc = this.extraReportsService.getCustomSize()
+    response.setHeader('Content-Type', 'application/pdf')
+    pdfDoc.info.Title = 'Billing-Report.pdf'
+    pdfDoc.pipe(response)
+    pdfDoc.end()
+  }
+
 }

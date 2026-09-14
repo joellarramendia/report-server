@@ -46,4 +46,29 @@ export class ExtraReportsService {
 
         return doc
     }
+
+
+    getCustomSize() {
+        const doc = this.printerService.createPdf({
+            pageSize: {
+                width: 150,
+                height: 300
+            },
+            content: [
+                {
+                    qr: 'https://devtalles.com',
+                    fit: 100,
+                     alignment: 'center'
+                },
+                {
+                    text: 'Reporte con tamaño',
+                    fontSize: 20,
+                    alignment: 'center',
+                    margin: [0, 20]
+                }
+            ]
+        })
+
+        return doc
+    }
 }
