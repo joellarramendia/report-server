@@ -4,6 +4,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { BasicReportModule } from './basic-report/basic-report.module';
 import { PrinterModule } from './printer/printer.module';
 import { StoreReportsModule } from './store-reports/store-reports.module';
+import { ExtraReportsModule } from './extra-reports/extra-reports.module';
 
 
 @Module({
@@ -16,7 +17,9 @@ import { StoreReportsModule } from './store-reports/store-reports.module';
     
     PrinterModule,
     
-    StoreReportsModule
+    StoreReportsModule,
+    
+    ExtraReportsModule
   ],
 })
 export class AppModule {}
