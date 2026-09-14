@@ -1,3 +1,5 @@
+export { getMyReport } from "./my.report";
+
 export { getStatisticsReport } from "./statistics.report";
 
 export { getBasicChartSvgReport } from "./basic-chart-svg.report";
